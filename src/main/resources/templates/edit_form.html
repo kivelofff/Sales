@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <title>Edit Sale</title>
+</head>
+<body>
+<div align="center">
+    <h1>Edit Sale</h1>
+    <br />
+    <form action="#" th:action="@{/update}" th:object="${result}"
+          method="post">
+
+        <table border="0" cellpadding="10">
+            <tr>
+                <td>Sample Name:</td>
+                <td><input type="text" th:field="*{sample}" /></td>
+            </tr>
+            <tr>
+                <td>Particle Number:</td>
+                <td><input type="text" th:field="*{particle_num}" /></td>
+            </tr>
+            <tr>
+                <td>U234, At. %:</td>
+                <td><input type="text" th:field="*{c_U234}" /></td>
+            </tr>
+            <tr>
+                <td>U234 Err, At. %</td>
+                <td><input type="text" th:field="*{c_U234_Err}" /></td>
+            </tr>
+            <tr>
+                <td>U235, At. %:</td>
+                <td><input type="text" th:field="*{c_U235}" /></td>
+            </tr>
+            <tr>
+                <td>U235 Err, At. %</td>
+                <td><input type="text" th:field="*{c_U235_Err}" /></td>
+            </tr>
+            <tr>
+                <td>U236, At. %:</td>
+                <td><input type="text" th:field="*{c_U236}" /></td>
+            </tr>
+            <tr>
+                <td>U236 Err, At. %</td>
+                <td><input type="text" th:field="*{c_U236_Err}" /></td>
+            </tr>
+            <tr>
+                <td>U238, At. %:</td>
+                <td><input type="text" th:field="*{c_U238}" /></td>
+            </tr>
+            <tr>
+                <td>U238 Err, At. %</td>
+                <td><input type="text" th:field="*{c_U238_Err}" /></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button type="submit">Save</button> </td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>

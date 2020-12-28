@@ -1,0 +1,51 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <title>Uranium Results Manager Application</title>
+</head>
+<body>
+<div align="center">
+    <h1>Uranium Results</h1>
+    <a href="/new">Enter New Result</a>
+    <br/><br/>
+    <table border="1" cellpadding="10">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Sample Name</th>
+            <th>Particle Number</th>
+            <th>U234, At. %</th>
+            <th>U234 Err, At. %</th>
+            <th>U235, At. %</th>
+            <th>U235 Err, At. %</th>
+            <th>U236, At. %</th>
+            <th>U236 Err, At. %</th>
+            <th>U238, At. %</th>
+            <th>U238 Err, At. %</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="result : ${listResult}">
+            <td th:text="${result.id}">ID</td>
+            <td th:text="${result.sample}">Sample Name</td>
+            <td th:text="${result.particle_num}">Particle Number</td>
+            <td th:text="${result.c_U234}">U234, At. %</td>
+            <td th:text="${result.c_U234_Err}">U234 Err, At. %</td>
+            <td th:text="${result.c_U235}">U235, At. %</td>
+            <td th:text="${result.c_U235_Err}">U235 Err, At. %</td>
+            <td th:text="${result.c_U236}">U236, At. %</td>
+            <td th:text="${result.c_U236_Err}">U236 Err, At. %</td>
+            <td th:text="${result.c_U238}">U238, At. %</td>
+            <td th:text="${result.c_U238_Err}">U238 Err, At. %</td>
+            <td>
+                <a th:href="'/edit/' + ${result.id}">Edit</a>
+                &nbsp;&nbsp;&nbsp;
+                <a th:href="'/delete/' + ${result.id}">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
